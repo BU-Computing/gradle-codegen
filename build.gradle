@@ -52,12 +52,12 @@ apply plugin: 'kotlin'
 sourceCompatibility = JavaVersion.VERSION_1_6
 targetCompatibility = JavaVersion.VERSION_1_6
 
-version = '0.5.10'
+version = '0.5.11'
 group = 'net.devrieze'
 
 bintray {
-    user = bintrayUser
-    key = bintrayApiKey
+    user = project.findProperty('bintrayUser') ?: ''
+    key = project.findProperty('bintrayApiKey') ?: ''
     publications = ['MyPublication']
 
     pkg {
